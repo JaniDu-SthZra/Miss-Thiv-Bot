@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands, tasks
 import io
 import aiohttp
+from keep_alive import keep_alive
 from PIL import Image, ImageDraw, ImageFont
 import os
 from dotenv import load_dotenv
@@ -268,4 +269,7 @@ async def on_member_update(before, after):
             print(f"Streamer mode OFF because {after.name} lost {role.name}")
 
 
+
+if __name__ == "__main__":
+    keep_alive()  
 bot.run(TOKEN)
